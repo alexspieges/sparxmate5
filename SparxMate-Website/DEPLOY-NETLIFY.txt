@@ -1,0 +1,15 @@
+SPARXMATE NETLIFY DEPLOYMENT
+
+This version is adapted for Netlify Functions. Do not use the old Express server for the hosted version.
+
+1. Create a GitHub repository and upload the CONTENTS of this folder (not the outer folder itself).
+2. In Netlify choose Add new project / Import from Git, connect GitHub, and select the repository.
+3. Build settings should be:
+   Build command: (leave blank)
+   Publish directory: public
+   Functions directory: netlify/functions
+4. In Netlify site configuration, add environment variable OPENAI_API_KEY with your private OpenAI API key.
+   Optional: OPENAI_MODEL = gpt-5.5 (change only if your API account does not support it).
+5. Deploy. Keep the API key private; never put it in public files or GitHub.
+
+The hosted website uses Netlify Functions for the AI endpoint. Tab sharing requires the user to select the Sparx tab in the browser's share prompt.

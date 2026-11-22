@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#09051f">
+<title>SparxMate Galaxy</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="/"><span class="brand-icon">⚗</span><span><b>SparxMate</b><small>SCIENCE AI ASSISTANT</small></span></a>
+  <span class="online"><i></i> Study mode</span>
+</header>
+<main>
+  <section class="welcome">
+    <p class="eyebrow">YOUR GCSE SCIENCE STUDY COMPANION</p>
+    <h1>Let's make science<br><em>make sense.</em></h1>
+    <p>A cosmic study space for GCSE Science. Choose your session length and get clear AI explanations.</p>
+  </section>
+
+  <section class="timer-card">
+    <div><div class="eyebrow dark">FOCUSED STUDY SESSION</div><h2 id="timerTitle">30-minute sprint</h2><label class="timer-select-label" for="sessionLength">Choose session length: <strong id="sessionLengthLabel">30 minutes</strong></label><input id="sessionLength" class="timer-range" type="range" min="1" max="120" step="1" value="30"><div class="range-ends"><span>1 min</span><span>2 hours</span></div></div>
+    <div class="clock" id="clock">30:00</div>
+    <div class="timer-controls"><button class="btn primary" id="start">Start session</button><button class="btn light" id="reset">Reset</button></div>
+    <div class="progress-track"><div id="timerProgress"></div></div>
+    <div class="timer-foot"><span id="timerLabel">Ready when you are</span><span id="elapsed">0 / 30 min</span></div>
+  </section>
+
+  <section class="workspace">
+    <div class="form-card">
+      <div class="section-head"><div><span class="step">01</span><h2>Ask SparxMate</h2></div><span class="tag">AI tutor</span></div>
+      <label for="subject">Science subject</label>
+      <div class="subject-grid" role="group" aria-label="Science subject">
+        <button class="subject selected" data-subject="Mixed science"><span>🧬</span>Mixed</button>
+        <button class="subject" data-subject="Biology"><span>🌿</span>Biology</button>
+        <button class="subject" data-subject="Chemistry"><span>🧪</span>Chemistry</button>
+        <button class="subject" data-subject="Physics"><span>⚡</span>Physics</button>
+      </div>
+      <div class="two-col">
+        <div><label for="level">School level</label><select id="level"><option>GCSE Year 10</option><option>GCSE Year 9</option><option>GCSE Year 11</option></select></div>
+        <div><label for="helpMode">Help style</label><select id="helpMode"><option>Explain step by step</option><option>Give me a hint first</option><option>Check my answer</option></select></div>
+      </div>
+      <label for="question">Enter your science question</label>
+      <textarea id="question" rows="5" placeholder="Paste or type a Sparx Science question here..."></textarea>
+      <div class="upload-area">
+        <label for="image">Or add a screenshot <span>PNG, JPG or WEBP</span></label>
+        <input type="file" id="image" accept="image/png,image/jpeg,image/webp">
+        <div id="fileName" class="file-name">No screenshot selected</div>
+      </div>
+      <button class="btn primary solve" id="solve">✦ Explain with AI</button>
+      <p class="privacy">SparxMate is a standalone website. It cannot access another browser tab or log into Sparx. You enter the question here, then review and submit your own work.</p>
+      <div id="status" class="status" role="status">Ready to help with Biology, Chemistry or Physics.</div>
+    </div>
+
+    <div class="answer-card">
+      <div class="section-head"><div><span class="step">02</span><h2>Your explanation</h2></div><span class="tag muted-tag">Review first</span></div>
+      <div id="answer" class="answer-empty">
+        <div class="empty-icon">✧</div>
+        <h3>Your cosmic study guide will appear here</h3>
+        <p>You'll get the key idea, worked steps and a suggested answer to review.</p>
+      </div>
+      <div id="result" class="result hidden">
+        <div class="answer-content" id="answerText"></div>
+        <div class="suggestion"><div class="suggestion-title">SUGGESTED ANSWER</div><div id="suggested"></div><button class="btn light small" id="copy">Copy answer</button></div>
+      </div>
+      <div class="note"><b>Remember:</b> Use the explanation to understand the topic. Check your answer and submit your own work on Sparx.</div>
+    </div>
+  </section>
+
+  <section class="bottom-grid">
+    <div class="mini-card"><span class="mini-icon green">✓</span><div><b id="count">0</b><small>Questions practised</small></div></div>
+    <div class="mini-card"><span class="mini-icon blue">⏱</span><div><b id="minutesDone">0 min</b><small>Focused today</small></div></div>
+    <div class="mini-card"><span class="mini-icon amber">✦</span><div><b>GCSE</b><small>Year 9–11 science</small></div></div>
+  </section>
+  <footer>SparxMate is an independent study assistant and is not affiliated with Sparx Learning.</footer>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>
